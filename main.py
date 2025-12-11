@@ -22,3 +22,13 @@ async def read_index() -> str:
 @app.get("/hello_world")
 async def read_root() -> dict[str, str]:
     return {"message": "Good morning world. This is my first API"}
+    
+from datetime import datetime
+
+@app.get("/current_time")
+async def get current_time() -> dict[str, str]:
+    now = datetime.now()
+    return {
+        "current_time": now.strftime("%Y-%m-%d %H:%M:%S"),
+        "timezone": "Asia/Tokyo"
+    }
