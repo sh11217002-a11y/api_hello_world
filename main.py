@@ -21,9 +21,9 @@ async def read_index() -> str:
 
 
 
-@app.get("/greet{name}")
-async def greet_user(nema: str) -> dict[str, str]:
+@app.get("/greet/{name}")
+async def greet_user(name: str) -> dict[str, str]:
     return {
-        "message": f"Hello, {nema} !",
+        "message": f"Hello, {name} !",
         "timestamp": datetime.now().strftime("%H:%M:%S")
     }
